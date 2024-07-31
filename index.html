@@ -1,19 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malayalam News Channels Live</title>
+    <title>Malayalam News Channel Monitor</title>
     <script>
-        // The URL you want to redirect to
-        let manorama= "tgBTspqA5nY";
-        let asianet="Ko18SgceYX8";
-        let mediaOne="GIT1lX0NdHo";
-        let mathrubhumi="YGEgelAiUf0";
-        let kairali="wq0ecjkN3G8";
-        let reporter="HGOiuQUwqEw";
-        let newsMalayalam="HvytGkZqvlM";
-        let twentyFourNews="1wECsnGZcfc";
-        let janamTv="mLIlgjUZRUs";
+        // The URLs for the channels
+        let manorama = "tgBTspqA5nY";
+        let asianet = "Ko18SgceYX8";
+        let mediaOne = "GIT1lX0NdHo";
+        let mathrubhumi = "YGEgelAiUf0";
+        let kairali = "wq0ecjkN3G8";
+        let reporter = "HGOiuQUwqEw";
+        let newsMalayalam = "HvytGkZqvlM";
+        let twentyFourNews = "1wECsnGZcfc";
+        let janamTv = "mLIlgjUZRUs";
             
         var redirectUrl = "https://emapp.cc/watch/[%7B%22v%22:%22" + manorama + "%22,%22t%22:0%7D,%7B%22v%22:%22" + asianet + "%22,%22t%22:0%7D,%7B%22v%22:%22" + mediaOne + "%22,%22t%22:0%7D,%7B%22v%22:%22" + mathrubhumi + "%22,%22t%22:0%7D,%7B%22v%22:%22" + kairali + "%22,%22t%22:0%7D,%7B%22v%22:%22" + reporter + "%22,%22t%22:0%7D,%7B%22v%22:%22" + newsMalayalam + "%22,%22t%22:0%7D,%7B%22v%22:%22" + twentyFourNews + "%22,%22t%22:0%7D,%7B%22v%22:%22" + janamTv + "%22,%22t%22:0%7D]";
 
@@ -21,10 +22,18 @@
         setTimeout(function() {
             window.location.href = redirectUrl;
         }, 0); // 1000 milliseconds = 1 second delay
+
+        // Display the URL on the page
+        function displayRedirectUrl() {
+            document.getElementById('redirect-link').innerText = redirectUrl;
+            document.getElementById('redirect-link').href = redirectUrl;
+        }
+
+        // Wait for the DOM to fully load before manipulating elements
+        document.addEventListener("DOMContentLoaded", displayRedirectUrl);
     </script>
 </head>
 <body>
-   
-    <p> Malayalam News Channel Live Streams Loading... If you are not redirected, <a href="https://emapp.cc/watch/[%7B%22v%22:%22tgBTspqA5nY%22,%22t%22:0%7D,%7B%22v%22:%22Ko18SgceYX8%22,%22t%22:0%7D,%7B%22v%22:%22GIT1lX0NdHo%22,%22t%22:0%7D,%7B%22v%22:%22YGEgelAiUf0%22,%22t%22:0%7D,%7B%22v%22:%22wq0ecjkN3G8%22,%22t%22:0%7D,%7B%22v%22:%22HGOiuQUwqEw%22,%22t%22:0%7D,%7B%22v%22:%22HvytGkZqvlM%22,%22t%22:0%7D,%7B%22v%22:%221wECsnGZcfc%22,%22t%22:0%7D,%7B%22v%22:%22mLIlgjUZRUs%22,%22t%22:0%7D]">click here</a>.</p>
+    <p>Malayalam News Channel Live Streams Loading in 3 Seconds. If you are not redirected, <a id="redirect-link" href="#">click here</a>.</p>
 </body>
 </html>
