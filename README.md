@@ -1,1 +1,1 @@
-Welcome to the Malayalam News Live Streams repository! This GitHub Pages project provides a centralized platform where you can watch live streams of all major Malayalam news channels simultaneously. Stay updated with the latest news and events from Kerala and around the world, all in one place.
+Welcome to the Malayalam News Live Streams repository! This GitHub Pages project provides a platform where you can watch live streams of all major Malayalam news channels simultaneously. Stay updated with the latest news and events from Kerala and around the world, all in one place.
