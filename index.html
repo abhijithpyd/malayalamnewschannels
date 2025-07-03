@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malayalam News Channel Monitor</title>
-    <script>
-        // The URLs for the channels
-        let manorama = "tgBTspqA5nY";
-        let mathrubhumi = "YGEgelAiUf0";
-        let asianet = "tXRuaacO-ZU";
-        let reporter = "nObUcHKZEGY";
-        let twentyFourNews = "1wECsnGZcfc";
-        let mediaOne = "-8d8-c0yvyU";
-        let newsMalayalam = "zEm78nYURIk";
-        let kairali = "yiiqRHY1Bl8";
-        let janamTv = "yKWe25rKSpU";
+  <meta charset="UTF-8">
+  <title>Malayalam News Channel Monitor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const channels = [
+        "tgBTspqA5nY", // manorama
+        "YGEgelAiUf0", // mathrubhumi
+        "tXRuaacO-ZU", // asianet
+        "nObUcHKZEGY", // reporter
+        "1wECsnGZcfc", // twentyFourNews
+        "-8d8-c0yvyU", // mediaOne
+        "zEm78nYURIk", // newsMalayalam
+        "yiiqRHY1Bl8", // kairali
+        "yKWe25rKSpU"  // janamTv
+      ];
 
-        var redirectUrl = "https://emapp.cc/watch/[%7B%22v%22:%22" + manorama + "%22,%22t%22:0%7D,%7B%22v%22:%22" + mathrubhumi + "%22,%22t%22:0%7D,%7B%22v%22:%22" + asianet + "%22,%22t%22:0%7D,%7B%22v%22:%22" + reporter + "%22,%22t%22:0%7D,%7B%22v%22:%22" + twentyFourNews + "%22,%22t%22:0%7D,%7B%22v%22:%22" + mediaOne + "%22,%22t%22:0%7D,%7B%22v%22:%22" + newsMalayalam + "%22,%22t%22:0%7D,%7B%22v%22:%22" + kairali + "%22,%22t%22:0%7D,%7B%22v%22:%22" + janamTv + "%22,%22t%22:0%7D]";
-        // var redirectUrl = "https://emapp.cc/watch/[%7B%22v%22:%22" + manorama + "%22,%22t%22:0%7D,%7B%22v%22:%22" + asianet + "%22,%22t%22:0%7D,%7B%22v%22:%22" + mediaOne + "%22,%22t%22:0%7D,%7B%22v%22:%22" + mathrubhumi + "%22,%22t%22:0%7D,%7B%22v%22:%22" + kairali + "%22,%22t%22:0%7D,%7B%22v%22:%22" + reporter + "%22,%22t%22:0%7D,%7B%22v%22:%22" + newsMalayalam + "%22,%22t%22:0%7D,%7B%22v%22:%22" + twentyFourNews + "%22,%22t%22:0%7D,%7B%22v%22:%22" + janamTv + "%22,%22t%22:0%7D]";
+      const streamData = channels.map(v => ({v, t:0}));
+      const redirectUrl = "https://emapp.cc/watch/" + encodeURIComponent(JSON.stringify(streamData));
 
-        // Redirect after a delay (optional)
-        setTimeout(function() {
-            window.location.href = redirectUrl;
-        }, 10); // 1000 milliseconds = 1 second delay
+      // show on page
+      const link = document.getElementById("redirect-link");
+      link.href = redirectUrl;
+      link.innerText = "here";
 
-        // Display the URL on the page
-        function displayRedirectUrl() {
-            document.getElementById('redirect-link').innerText = redirectUrl;
-            document.getElementById('redirect-link').href = redirectUrl;
-        }
-
-        // Wait for the DOM to fully load before manipulating elements
-        document.addEventListener("DOMContentLoaded", displayRedirectUrl);
-    </script>
+      // redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = redirectUrl;
+      }, 3000);
+    });
+  </script>
 </head>
 <body>
-    <p>Malayalam News Channel Live Streams Loading in 3 Seconds. If you are not redirected, click here <a id="redirect-link" href="#"> </a>.</p>
+  <p>Malayalam News Channel Live Streams Loading in 3 Seconds. If you are not redirected, click <a id="redirect-link"></a>.</p>
 </body>
 </html>
